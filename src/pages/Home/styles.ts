@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Dialog from '@material-ui/core/Dialog';
 
 export const Container = styled.div`
   max-width: 1440px;
@@ -29,28 +30,65 @@ export const Header = styled.div`
   }
 `;
 
-export const Search = styled.div`
+export const NewPlace = styled.div`
   background: #4f9419;
   display: flex;
-  align-items: center;
-  padding: 48px 16px 68px;
+  align-items: flex-start;
+  padding: 48px 16px 0;
+  height: 203px;
 
   form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
     width: 1296px;
     margin: 0 auto;
-    label {
-      color: #fff;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      margin-top: 16px;
 
-      span {
-        margin: 0 0 3px 2px;
+    .autocomplete {
+      > div > div {
+        border-radius: 7px;
+        padding-bottom: 5px;
+      }
+
+      .formcontrol {
+        input {
+          padding-top: 14px;
+          padding-bottom: 15px;
+        }
+      }
+    }
+
+    .formcontrol {
+      label {
+        position: relative;
+        color: #fff;
+        font-size: 20px;
+        padding-left: 4px;
+        margin-top: 8px;
+        top: 6px;
+        left: -14px;
+      }
+
+      label.Mui-error,
+      p.Mui-error {
+        color: #b60610;
+      }
+
+      > div > div {
+        background: #fff;
+        border-radius: 7px;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        input {
+          padding-top: 14px;
+          padding-bottom: 15px;
+        }
+
+        fieldset {
+          border: none;
+        }
       }
 
       &:nth-child(1) {
@@ -63,17 +101,8 @@ export const Search = styled.div`
         width: 238px;
       }
     }
-    input,
-    select {
-      padding: 15px;
-      border: none;
-      background: #fff;
-      border-radius: 7px;
-      width: 100%;
-      line-height: 19px;
-      height: 48px;
-    }
-    button {
+
+    .submit-button {
       width: 203px;
       height: 48px;
       border: none;
@@ -83,6 +112,17 @@ export const Search = styled.div`
       font-size: 18px;
       line-height: 21px;
       padding: 16px 64px;
+      font-weight: 400;
+      text-transform: capitalize;
+      margin-top: 28px;
+
+      .buttonProgress {
+        color: #fff;
+        position: absolute;
+        margin-top: -12;
+        margin-left: -12;
+        opacity: 1;
+      }
     }
   }
 
@@ -91,22 +131,21 @@ export const Search = styled.div`
 
     form {
       width: 780px;
-
-      button {
-        margin: 16px 0 0 0;
-      }
     }
   }
 
   @media (max-width: 810px) {
+    height: auto;
+
     form {
       width: 100%;
 
-      label {
+      .formcontrol,
+      .autocomplete {
         width: 100% !important;
       }
 
-      button {
+      .submit-button {
         width: 100%;
       }
     }
@@ -118,4 +157,25 @@ export const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+export const DialogEdit = styled(Dialog)`
+  .MuiDialog-paperWidthSm {
+    max-width: 450px;
+  }
+  .MuiDialogContent-root {
+    .countryImg {
+      img {
+        width: 60px;
+      }
+    }
+
+    .country-name {
+      color: #4f9419;
+      line-height: 19px;
+      font-weight: 700;
+      padding: 8px 0;
+      border-bottom: 1px solid #ababab;
+    }
+  }
 `;

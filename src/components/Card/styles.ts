@@ -19,7 +19,7 @@ export const Container = styled.div`
     }
 
     .action {
-      a {
+      button {
         padding: 8px;
         display: inline-flex;
         font-size: 20px;
@@ -29,7 +29,7 @@ export const Container = styled.div`
     }
   }
 
-  .country {
+  .country-name {
     color: #4f9419;
     line-height: 19px;
     font-weight: 700;
@@ -37,7 +37,7 @@ export const Container = styled.div`
     border-bottom: 1px solid #ababab;
   }
 
-  .location-goal {
+  .place-goal {
     margin: 40px 20px 0;
 
     div {
